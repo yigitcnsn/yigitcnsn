@@ -1,293 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" width="100%" height="340">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" height="280">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070B12"/>
-      <stop offset="50%" stop-color="#0C1220"/>
-      <stop offset="100%" stop-color="#0F182B"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="50%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#34D399"/>
-    </linearGradient>
-    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.09"/>
-      <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="radarCone" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34D399" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
-    </linearGradient>
-    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.45"/>
-      <circle cx="28" cy="28" r="0.9" fill="#334155" fill-opacity="0.5"/>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.8" fill="#30363D" fill-opacity="0.7"/>
     </pattern>
-    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="3.5" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <clipPath id="cardClip">
-      <rect width="1000" height="340" rx="18"/>
-    </clipPath>
     <!-- Terminal typewriter reveal masks -->
-    <clipPath id="typeCmd">
-      <rect x="16" y="40" width="0" height="20">
-        <animate attributeName="width" values="0;270;270;0" keyTimes="0;0.14;0.94;1" dur="12s" repeatCount="indefinite"/>
+    <clipPath id="tCmd">
+      <rect x="18" y="42" width="0" height="20">
+        <animate attributeName="width" values="0;280;280;0" keyTimes="0;0.14;0.94;1" dur="12s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <clipPath id="typeL1">
-      <rect x="16" y="64" width="0" height="20">
-        <animate attributeName="width" values="0;0;300;300;0" keyTimes="0;0.14;0.24;0.94;1" dur="12s" repeatCount="indefinite"/>
+    <clipPath id="t1">
+      <rect x="18" y="66" width="0" height="20">
+        <animate attributeName="width" values="0;0;310;310;0" keyTimes="0;0.14;0.24;0.94;1" dur="12s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <clipPath id="typeL2">
-      <rect x="16" y="84" width="0" height="20">
-        <animate attributeName="width" values="0;0;300;300;0" keyTimes="0;0.24;0.34;0.94;1" dur="12s" repeatCount="indefinite"/>
+    <clipPath id="t2">
+      <rect x="18" y="86" width="0" height="20">
+        <animate attributeName="width" values="0;0;310;310;0" keyTimes="0;0.24;0.34;0.94;1" dur="12s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <clipPath id="typeL3">
-      <rect x="16" y="104" width="0" height="20">
-        <animate attributeName="width" values="0;0;300;300;0" keyTimes="0;0.34;0.44;0.94;1" dur="12s" repeatCount="indefinite"/>
+    <clipPath id="t3">
+      <rect x="18" y="106" width="0" height="20">
+        <animate attributeName="width" values="0;0;310;310;0" keyTimes="0;0.34;0.44;0.94;1" dur="12s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <clipPath id="typeL4">
-      <rect x="16" y="124" width="0" height="20">
-        <animate attributeName="width" values="0;0;300;300;0" keyTimes="0;0.44;0.54;0.94;1" dur="12s" repeatCount="indefinite"/>
+    <clipPath id="t4">
+      <rect x="18" y="126" width="0" height="22">
+        <animate attributeName="width" values="0;0;310;310;0" keyTimes="0;0.44;0.54;0.94;1" dur="12s" repeatCount="indefinite"/>
       </rect>
     </clipPath>
-    <clipPath id="typeL5">
-      <rect x="16" y="146" width="0" height="22">
-        <animate attributeName="width" values="0;0;300;300;0" keyTimes="0;0.54;0.64;0.94;1" dur="12s" repeatCount="indefinite"/>
-      </rect>
-    </clipPath>
-
     <style>
-      .title { font: 800 35px 'SF Pro Display', -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif; fill: #F8FAFC; letter-spacing: -0.5px; }
-      .subtitle { font: 600 15px 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace; fill: #38BDF8; letter-spacing: 0.3px; }
-      .quote { font: italic 500 13px 'SF Pro Text', -apple-system, 'Segoe UI', Georgia, serif; fill: #E2E8F0; }
-      .quote-em { font: italic 700 13px 'SF Pro Text', -apple-system, 'Segoe UI', Georgia, serif; fill: #34D399; }
-      .desc { font: 400 13.5px -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif; fill: #94A3B8; }
-      .chip { font: 600 11px 'JetBrains Mono', 'SF Mono', monospace; fill: #E2E8F0; }
-      .term-hdr { font: 600 10.5px 'JetBrains Mono', 'SF Mono', monospace; fill: #64748B; }
-      .term-txt { font: 500 11.5px 'JetBrains Mono', 'SF Mono', monospace; fill: #CBD5E1; }
-      .term-ok  { font: 700 11.5px 'JetBrains Mono', 'SF Mono', monospace; fill: #34D399; }
-      .term-acc { font: 600 11.5px 'JetBrains Mono', 'SF Mono', monospace; fill: #38BDF8; }
-      .term-warn{ font: 600 11.5px 'JetBrains Mono', 'SF Mono', monospace; fill: #A78BFA; }
-
-      .trace-flow {
-        stroke-dasharray: 18 220;
-        animation: flow 4.2s linear infinite;
-      }
-      .trace-flow-2 {
-        stroke-dasharray: 22 250;
-        animation: flow 5.8s linear infinite;
-        animation-delay: -1.8s;
-      }
-      .trace-flow-3 {
-        stroke-dasharray: 14 200;
-        animation: flow 3.6s linear infinite;
-        animation-delay: -0.9s;
-      }
-      .pulse-led {
-        animation: pulse 2s ease-in-out infinite;
-      }
-      .cursor {
-        animation: blink 0.9s step-end infinite;
-      }
-      .wave-path {
-        stroke-dasharray: 420;
-        stroke-dashoffset: 420;
-        animation: drawWave 2.8s ease-in-out infinite alternate;
-      }
-      .sine-path {
-        stroke-dasharray: 10 8;
-        animation: flow 2.4s linear infinite;
-      }
-      .scanline {
-        animation: scanY 7s ease-in-out infinite;
-      }
-      .pill-glow {
-        animation: pillPulse 4s ease-in-out infinite;
-      }
-      @keyframes flow {
-        from { stroke-dashoffset: 240; }
-        to   { stroke-dashoffset: -240; }
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50%      { opacity: 0.25; }
-      }
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50%      { opacity: 0; }
-      }
-      @keyframes drawWave {
-        0%   { stroke-dashoffset: 260; }
-        100% { stroke-dashoffset: 0; }
-      }
-      @keyframes scanY {
-        0%   { transform: translateY(-60px); }
-        50%  { transform: translateY(340px); }
-        100% { transform: translateY(-60px); }
-      }
-      @keyframes pillPulse {
-        0%, 100% { stroke-opacity: 0.95; }
-        50%      { stroke-opacity: 0.35; }
-      }
+      .name  { font: 700 32px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #E6EDF3; letter-spacing: -0.4px; }
+      .role  { font: 500 14.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; fill: #58A6FF; }
+      .quote { font: italic 400 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif; fill: #8B949E; }
+      .q-hi  { font: italic 600 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif; fill: #E6EDF3; }
+      .bio   { font: 400 13.5px -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif; fill: #8B949E; }
+      .pill  { font: 500 11.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; fill: #C9D1D9; }
+      .thdr  { font: 500 11px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; fill: #6E7681; }
+      .ttxt  { font: 400 11.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; fill: #C9D1D9; }
+      .tok   { font: 600 11.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; fill: #3FB950; }
+      .tcmd  { font: 500 11.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; fill: #58A6FF; }
+      .cur   { animation: blink 1s step-end infinite; }
+      .dot   { animation: pulse 2.4s ease-in-out infinite; }
+      .wave  { stroke-dasharray: 380; stroke-dashoffset: 380; animation: draw 3.2s ease-in-out infinite alternate; }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+      @keyframes draw  { 0% { stroke-dashoffset: 240; } 100% { stroke-dashoffset: 0; } }
     </style>
   </defs>
 
-  <g clip-path="url(#cardClip)">
-    <!-- Outer Card Background -->
-    <rect width="1000" height="340" rx="18" fill="url(#bg)"/>
-    <rect width="1000" height="340" rx="18" fill="url(#grid)"/>
+  <!-- Clean Matte GitHub-Dark Card -->
+  <rect width="1000" height="280" rx="10" fill="#0D1117"/>
+  <rect width="1000" height="280" rx="10" fill="url(#dotGrid)"/>
+  <rect x="0.5" y="0.5" width="999" height="279" rx="9.5" fill="none" stroke="#30363D" stroke-width="1"/>
 
-    <!-- Ambient Cyber Scan Beam -->
-    <rect class="scanline" x="0" y="0" width="1000" height="54" fill="url(#scanBeam)"/>
+  <!-- Left Column: Crisp Typography -->
+  <g transform="translate(36, 34)">
+    <circle class="dot" cx="6" cy="8" r="4" fill="#3FB950"/>
+    <text x="18" y="12" class="thdr" fill="#8B949E">ISTANBUL, TR  ·  SOFTWARE &amp; EMBEDDED SYSTEMS</text>
 
-    <!-- Background Circuit Network -->
-    <g fill="none" stroke="#1E293B" stroke-width="1.5">
-      <path d="M 0 286 L 140 286 L 170 314 L 460 314 L 485 289 L 612 289"/>
-      <path d="M 410 30 L 535 30 L 560 55 L 632 55"/>
-      <path d="M 475 204 L 555 204 L 575 224 L 632 224"/>
-    </g>
+    <text x="0" y="54" class="name">Ahmet Yiğitcan Şen</text>
+    <text x="0" y="78" class="role">Software Engineer  ·  Systems, AI &amp; Silicon</text>
 
-    <!-- High-Speed Glowing Data Packets along PCB Traces -->
-    <g fill="none" stroke-width="2.2" filter="url(#glow)">
-      <path class="trace-flow" stroke="#38BDF8" d="M 0 286 L 140 286 L 170 314 L 460 314 L 485 289 L 612 289"/>
-      <path class="trace-flow-2" stroke="#A78BFA" d="M 410 30 L 535 30 L 560 55 L 632 55"/>
-      <path class="trace-flow-3" stroke="#34D399" d="M 475 204 L 555 204 L 575 224 L 632 224"/>
-    </g>
-    <circle cx="612" cy="289" r="3.5" fill="#34D399" filter="url(#glow)"/>
-    <circle cx="410" cy="30" r="3" fill="#A78BFA"/>
-    <circle cx="475" cy="204" r="3" fill="#38BDF8"/>
+    <!-- Understated Quote Bar -->
+    <line x1="2" y1="96" x2="2" y2="116" stroke="#3FB950" stroke-width="2.5"/>
+    <text x="14" y="111" class="quote">“A jack of all trades is a master of none, <tspan class="q-hi">but oftentimes better than a master of one.</tspan>”</text>
 
-    <!-- Top Animated Gradient Accent Bar -->
-    <rect x="36" y="0" width="320" height="3.5" rx="1.75" fill="url(#accentGrad)">
-      <animate attributeName="width" values="180;380;180" dur="6s" repeatCount="indefinite"/>
-    </rect>
+    <text x="0" y="144" class="bio">Building across the stack: native macOS &amp; mobile apps, WebSocket backends, MCP/AI</text>
+    <text x="0" y="164" class="bio">tooling, computer-vision workbenches, bare-Linux C OSes, and Zephyr/STM32 firmware.</text>
 
-    <!-- Left Column: Identity, Motto & Full-Stack + Embedded Focus -->
-    <g transform="translate(40, 34)">
-      <!-- Live Status Pill -->
-      <rect x="0" y="0" width="356" height="26" rx="13" fill="#111A2E" stroke="#1E293B" stroke-width="1"/>
-      <circle class="pulse-led" cx="15" cy="13" r="4.5" fill="#34D399" filter="url(#glow)"/>
-      <text x="28" y="17" class="chip" fill="#94A3B8" textLength="314" lengthAdjust="spacing">ISTANBUL, TR  ·  SOFTWARE · SYSTEMS · SILICON</text>
+    <!-- Minimal Monospace Tag Pills -->
+    <g transform="translate(0, 188)">
+      <rect x="0"   y="0" width="94"  height="26" rx="5" fill="#161B22" stroke="#30363D"/>
+      <text x="47"  y="17" text-anchor="middle" class="pill">Swift · TS</text>
 
-      <!-- Name & Title -->
-      <text x="0" y="68" class="title">Ahmet Yiğitcan Şen</text>
-      <text x="0" y="96" class="subtitle">&gt; Software &amp; Embedded Systems Engineer</text>
+      <rect x="102" y="0" width="106" height="26" rx="5" fill="#161B22" stroke="#30363D"/>
+      <text x="155" y="17" text-anchor="middle" class="pill">Python · CV</text>
 
-      <!-- Motto Quote Box (Strictly sized with textLength so it never overflows on any OS/browser) -->
-      <rect x="0" y="114" width="564" height="38" rx="8" fill="#0B1324" stroke="#1E293B" stroke-width="1.2"/>
-      <rect x="0" y="114" width="4" height="38" rx="2" fill="url(#accentGrad)"/>
-      <text x="14" y="138" class="quote" textLength="536" lengthAdjust="spacing">“A jack of all trades is a master of none, <tspan class="quote-em">but oftentimes better than a master of one.</tspan>”</text>
+      <rect x="216" y="0" width="90"  height="26" rx="5" fill="#161B22" stroke="#30363D"/>
+      <text x="261" y="17" text-anchor="middle" class="pill">C / C++20</text>
 
-      <!-- Bio Description -->
-      <text x="0" y="178" class="desc" textLength="548" lengthAdjust="spacing">Shipping across the entire stack — from native macOS/mobile apps, full-stack web</text>
-      <text x="0" y="198" class="desc" textLength="554" lengthAdjust="spacing">platforms, computer vision &amp; AI/MCP tooling down to bare-Linux OSes and RTOS firmware.</text>
+      <rect x="314" y="0" width="114" height="26" rx="5" fill="#161B22" stroke="#30363D"/>
+      <text x="371" y="17" text-anchor="middle" class="pill">Linux · RTOS</text>
 
-      <!-- Stack Pills (Centered text + gentle breathing border glow) -->
-      <g transform="translate(0, 222)">
-        <rect class="pill-glow" x="0" y="0" width="98" height="28" rx="6" fill="#101B2D" stroke="#3B82F6" stroke-width="1.2"/>
-        <text x="49" y="18" text-anchor="middle" class="chip" fill="#60A5FA">Swift · TS</text>
-
-        <rect class="pill-glow" x="108" y="0" width="112" height="28" rx="6" fill="#101B2D" stroke="#8B5CF6" stroke-width="1.2"/>
-        <text x="164" y="18" text-anchor="middle" class="chip" fill="#A78BFA">Python · AI</text>
-
-        <rect class="pill-glow" x="230" y="0" width="98" height="28" rx="6" fill="#101B2D" stroke="#0EA5E9" stroke-width="1.2"/>
-        <text x="279" y="18" text-anchor="middle" class="chip" fill="#38BDF8">C / C++20</text>
-
-        <rect class="pill-glow" x="338" y="0" width="114" height="28" rx="6" fill="#101B2D" stroke="#10B981" stroke-width="1.2"/>
-        <text x="395" y="18" text-anchor="middle" class="chip" fill="#34D399">Linux · RTOS</text>
-
-        <rect class="pill-glow" x="462" y="0" width="102" height="28" rx="6" fill="#101B2D" stroke="#F59E0B" stroke-width="1.2"/>
-        <text x="513" y="18" text-anchor="middle" class="chip" fill="#FBBF24">Full-Stack</text>
-      </g>
-    </g>
-
-    <!-- Right Column: Live Animated Terminal + Oscilloscope + Radar HUD -->
-    <g transform="translate(628, 26)">
-      <rect x="0" y="0" width="344" height="288" rx="12" fill="#090E18" stroke="#1E293B" stroke-width="1.5"/>
-      <rect x="0" y="0" width="344" height="30" rx="12" fill="#121A2D"/>
-      <rect x="0" y="18" width="344" height="12" fill="#121A2D"/>
-      <line x1="0" y1="30" x2="344" y2="30" stroke="#1E293B" stroke-width="1"/>
-
-      <!-- Traffic Lights -->
-      <circle cx="16" cy="15" r="5" fill="#EF4444"/>
-      <circle cx="32" cy="15" r="5" fill="#F59E0B"/>
-      <circle cx="48" cy="15" r="5" fill="#10B981"/>
-      <text x="72" y="19" class="term-hdr">yigit@macbook-pro ~ / telemetry</text>
-
-      <!-- Spinning Radar / AR Homography Scanner in Top-Right of Terminal -->
-      <g transform="translate(304, 62)">
-        <circle cx="0" cy="0" r="20" fill="#060A11" stroke="#1E293B" stroke-width="1"/>
-        <circle cx="0" cy="0" r="12" fill="none" stroke="#1E293B" stroke-dasharray="2 2" stroke-width="0.8"/>
-        <line x1="-20" y1="0" x2="20" y2="0" stroke="#1E293B" stroke-width="0.7"/>
-        <line x1="0" y1="-20" x2="0" y2="20" stroke="#1E293B" stroke-width="0.7"/>
-        <path d="M 0 0 L 18 -8 A 20 20 0 0 1 18 8 Z" fill="url(#radarCone)">
-          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="3.2s" repeatCount="indefinite"/>
-        </path>
-        <circle class="pulse-led" cx="7" cy="-6" r="2" fill="#34D399"/>
-        <circle cx="-8" cy="7" r="1.8" fill="#38BDF8"/>
-      </g>
-
-      <!-- Animated Typewriter Terminal Lines -->
-      <g clip-path="url(#typeCmd)">
-        <text x="16" y="54" class="term-acc">$ stack --boot --all-layers</text>
-      </g>
-      <g clip-path="url(#typeL1)">
-        <text x="16" y="76" class="term-ok">[APP]</text>
-        <text x="58" y="76" class="term-txt">SwiftUI · Flutter · Node · FastAPI</text>
-      </g>
-      <g clip-path="url(#typeL2)">
-        <text x="16" y="96" class="term-ok">[AI ]</text>
-        <text x="58" y="96" class="term-txt">MCP Servers · Ollama · OpenCV AR</text>
-      </g>
-      <g clip-path="url(#typeL3)">
-        <text x="16" y="116" class="term-ok">[SYS]</text>
-        <text x="58" y="116" class="term-txt">Bare-Linux OS (C) · 60MB RAM · mDNS</text>
-      </g>
-      <g clip-path="url(#typeL4)">
-        <text x="16" y="136" class="term-ok">[EMB]</text>
-        <text x="58" y="136" class="term-txt">Zephyr RTOS · STM32 · nRF52 · ESP32</text>
-      </g>
-      <g clip-path="url(#typeL5)">
-        <text x="16" y="158" class="term-warn">SPAN:</text>
-        <text x="58" y="158" class="term-txt">Cloud &amp; UI  &lt;───&gt;  Bare Silicon</text>
-        <rect class="cursor" x="284" y="147" width="7" height="13" fill="#38BDF8"/>
-      </g>
-
-      <!-- Dual-Channel Live Oscilloscope + Spectrum Analyzer Box -->
-      <rect x="14" y="172" width="316" height="102" rx="8" fill="#060911" stroke="#1E293B" stroke-width="1"/>
-      <line x1="14" y1="205" x2="330" y2="205" stroke="#1E293B" stroke-dasharray="2 3" stroke-width="0.7"/>
-      <line x1="14" y1="229" x2="330" y2="229" stroke="#1E293B" stroke-dasharray="2 3" stroke-width="0.7"/>
-      <text x="22" y="187" class="term-hdr" fill="#38BDF8">CH1: WS / API STREAM</text>
-      <text x="322" y="187" text-anchor="end" class="term-hdr" fill="#34D399">CH2: 19.5kHz PWM / SPI</text>
-
-      <!-- CH1 (Top Lane): Animated Analog Sine/Packet Wave (y = 195..211) -->
-      <path class="sine-path" d="M 22 203 Q 37 193, 52 203 T 82 203 T 112 203 T 142 203 T 172 203 T 202 203 T 232 203 T 262 203 T 292 203 T 322 203" fill="none" stroke="#38BDF8" stroke-width="1.6" stroke-opacity="0.9"/>
-
-      <!-- CH2 (Middle Lane): Animated Logic Analyzer Square Wave (y = 217..235) -->
-      <path class="wave-path" d="M 22 235 L 42 235 L 42 217 L 66 217 L 66 235 L 82 235 L 82 217 L 116 217 L 116 235 L 140 235 L 140 217 L 160 217 L 160 235 L 192 235 L 192 217 L 220 217 L 220 235 L 242 235 L 242 217 L 276 217 L 276 235 L 314 235" fill="none" stroke="#34D399" stroke-width="1.9" filter="url(#glow)"/>
-
-      <!-- Bottom Lane: 12-Bar Animated Sub-GHz / CPU Load Spectrum Equalizer (y = 247..266) -->
-      <g transform="translate(22, 266)">
-        <rect x="0"   y="-8"  width="13" height="8"  rx="2" fill="#38BDF8" opacity="0.85"><animate attributeName="height" values="4;14;6;12;4" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="-4;-14;-6;-12;-4" dur="1.4s" repeatCount="indefinite"/></rect>
-        <rect x="19"  y="-12" width="13" height="12" rx="2" fill="#38BDF8" opacity="0.85"><animate attributeName="height" values="12;5;15;7;12" dur="1.7s" repeatCount="indefinite"/><animate attributeName="y" values="-12;-5;-15;-7;-12" dur="1.7s" repeatCount="indefinite"/></rect>
-        <rect x="38"  y="-7"  width="13" height="7"  rx="2" fill="#818CF8" opacity="0.85"><animate attributeName="height" values="5;15;9;13;5" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="-5;-15;-9;-13;-5" dur="1.3s" repeatCount="indefinite"/></rect>
-        <rect x="57"  y="-14" width="13" height="14" rx="2" fill="#818CF8" opacity="0.85"><animate attributeName="height" values="14;7;12;16;14" dur="1.9s" repeatCount="indefinite"/><animate attributeName="y" values="-14;-7;-12;-16;-14" dur="1.9s" repeatCount="indefinite"/></rect>
-        <rect x="76"  y="-10" width="13" height="10" rx="2" fill="#A78BFA" opacity="0.85"><animate attributeName="height" values="9;16;6;12;9" dur="1.5s" repeatCount="indefinite"/><animate attributeName="y" values="-9;-16;-6;-12;-9" dur="1.5s" repeatCount="indefinite"/></rect>
-        <rect x="95"  y="-15" width="13" height="15" rx="2" fill="#A78BFA" opacity="0.85"><animate attributeName="height" values="15;6;13;10;15" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="-15;-6;-13;-10;-15" dur="1.2s" repeatCount="indefinite"/></rect>
-        <rect x="114" y="-8"  width="13" height="8"  rx="2" fill="#34D399" opacity="0.85"><animate attributeName="height" values="6;14;10;5;6" dur="1.6s" repeatCount="indefinite"/><animate attributeName="y" values="-6;-14;-10;-5;-6" dur="1.6s" repeatCount="indefinite"/></rect>
-        <rect x="133" y="-13" width="13" height="13" rx="2" fill="#34D399" opacity="0.85"><animate attributeName="height" values="13;8;16;10;13" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="-13;-8;-16;-10;-13" dur="1.4s" repeatCount="indefinite"/></rect>
-        <rect x="152" y="-10" width="13" height="10" rx="2" fill="#34D399" opacity="0.85"><animate attributeName="height" values="10;15;5;12;10" dur="1.8s" repeatCount="indefinite"/><animate attributeName="y" values="-10;-15;-5;-12;-10" dur="1.8s" repeatCount="indefinite"/></rect>
-        <rect x="171" y="-12" width="13" height="12" rx="2" fill="#38BDF8" opacity="0.85"><animate attributeName="height" values="11;5;14;8;11" dur="1.5s" repeatCount="indefinite"/><animate attributeName="y" values="-11;-5;-14;-8;-11" dur="1.5s" repeatCount="indefinite"/></rect>
-        <rect x="190" y="-7"  width="13" height="7"  rx="2" fill="#38BDF8" opacity="0.85"><animate attributeName="height" values="5;13;7;15;5" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="-5;-13;-7;-15;-5" dur="1.3s" repeatCount="indefinite"/></rect>
-        <text x="300" y="-4" text-anchor="end" class="term-hdr" fill="#94A3B8">433MHz / CPU</text>
-      </g>
+      <rect x="436" y="0" width="112" height="26" rx="5" fill="#161B22" stroke="#30363D"/>
+      <text x="492" y="17" text-anchor="middle" class="pill">STM32 · PCB</text>
     </g>
   </g>
-  <rect x="1" y="1" width="998" height="338" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Right Column: Minimal Terminal & Logic Trace -->
+  <g transform="translate(626, 24)">
+    <rect width="344" height="232" rx="8" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <line x1="0" y1="28" x2="344" y2="28" stroke="#30363D" stroke-width="1"/>
+    <circle cx="15" cy="14" r="4.5" fill="#484F58"/>
+    <circle cx="29" cy="14" r="4.5" fill="#484F58"/>
+    <circle cx="43" cy="14" r="4.5" fill="#484F58"/>
+    <text x="64" y="18" class="thdr">yigit@macbook-pro: ~/developer</text>
+
+    <g clip-path="url(#tCmd)">
+      <text x="16" y="54" class="tcmd">$ uname -a &amp;&amp; stack --summary</text>
+    </g>
+    <g clip-path="url(#t1)">
+      <text x="16" y="78" class="tok">app </text>
+      <text x="52" y="78" class="ttxt">SwiftUI · Flutter · Node · FastAPI</text>
+    </g>
+    <g clip-path="url(#t2)">
+      <text x="16" y="98" class="tok">ai  </text>
+      <text x="52" y="98" class="ttxt">MCP Servers · Ollama · OpenCV AR</text>
+    </g>
+    <g clip-path="url(#t3)">
+      <text x="16" y="118" class="tok">sys </text>
+      <text x="52" y="118" class="ttxt">Bare-Linux OS (C) · 60MB RAM · mDNS</text>
+    </g>
+    <g clip-path="url(#t4)">
+      <text x="16" y="138" class="tok">hw  </text>
+      <text x="52" y="138" class="ttxt">Zephyr RTOS · STM32 · nRF52 · KiCad</text>
+      <rect class="cur" x="308" y="127" width="6" height="13" fill="#58A6FF"/>
+    </g>
+
+    <!-- Clean Logic Analyzer Trace Strip -->
+    <rect x="14" y="156" width="316" height="62" rx="6" fill="#0D1117" stroke="#21262D"/>
+    <text x="24" y="172" class="thdr">LOGIC ANALYZER · SPI / 19.5kHz PWM</text>
+    <text x="320" y="172" text-anchor="end" class="thdr" fill="#3FB950">LOCKED</text>
+    <line x1="22" y1="196" x2="322" y2="196" stroke="#21262D" stroke-dasharray="2 3"/>
+    <path class="wave" d="M 24 206 L 44 206 L 44 184 L 68 184 L 68 206 L 86 206 L 86 184 L 120 184 L 120 206 L 144 206 L 144 184 L 166 184 L 166 206 L 198 206 L 198 184 L 228 184 L 228 206 L 250 206 L 250 184 L 284 184 L 284 206 L 318 206" fill="none" stroke="#3FB950" stroke-width="1.6"/>
+  </g>
 </svg>
