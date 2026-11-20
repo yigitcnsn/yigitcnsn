@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 116" width="100%" height="116">
+  <defs>
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="35%" stop-color="#818CF8"/>
+      <stop offset="70%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="pGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <style>
+      .box { fill: #0C1322; stroke-width: 1.5; }
+      .lbl { font: 700 12.5px 'SF Pro Display', -apple-system, 'Segoe UI', sans-serif; fill: #F8FAFC; }
+      .sub { font: 500 10px 'JetBrains Mono', 'SF Mono', monospace; fill: #94A3B8; }
+      .track { stroke: #1E293B; stroke-width: 2; }
+      .beam { stroke: url(#pipeGrad); stroke-width: 2.5; stroke-dasharray: 28 240; animation: beamMove 3.2s linear infinite; }
+      .beam-rev { stroke: url(#pipeGrad); stroke-width: 2; stroke-dasharray: 18 260; animation: beamRev 4s linear infinite; }
+      @keyframes beamMove {
+        from { stroke-dashoffset: 268; }
+        to   { stroke-dashoffset: -268; }
+      }
+      @keyframes beamRev {
+        from { stroke-dashoffset: -278; }
+        to   { stroke-dashoffset: 278; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1000" height="116" rx="14" fill="#090E1A" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- Bi-directional Telemetry Backbone Tracks -->
+  <line class="track" x1="160" y1="50" x2="840" y2="50"/>
+  <line class="track" x1="160" y1="66" x2="840" y2="66"/>
+  <line class="beam" x1="160" y1="50" x2="840" y2="50" filter="url(#pGlow)"/>
+  <line class="beam-rev" x1="160" y1="66" x2="840" y2="66" filter="url(#pGlow)"/>
+
+  <!-- Node 1: Native UI & Web -->
+  <g transform="translate(22, 20)">
+    <rect class="box" width="168" height="76" rx="10" stroke="#38BDF8"/>
+    <text x="84" y="32" text-anchor="middle" class="lbl">1. UI &amp; Full-Stack</text>
+    <text x="84" y="50" text-anchor="middle" class="sub" fill="#38BDF8">SwiftUI · Flutter · React</text>
+    <text x="84" y="65" text-anchor="middle" class="sub">Node.js · WebSocket</text>
+  </g>
+
+  <!-- Node 2: AI & Computer Vision -->
+  <g transform="translate(224, 20)">
+    <rect class="box" width="168" height="76" rx="10" stroke="#818CF8"/>
+    <text x="84" y="32" text-anchor="middle" class="lbl">2. AI &amp; Spatial CV</text>
+    <text x="84" y="50" text-anchor="middle" class="sub" fill="#818CF8">MCP Servers · Ollama</text>
+    <text x="84" y="65" text-anchor="middle" class="sub">OpenCV · Homography</text>
+  </g>
+
+  <!-- Node 3: Services & Protocols -->
+  <g transform="translate(426, 20)">
+    <rect class="box" width="168" height="76" rx="10" stroke="#A78BFA"/>
+    <text x="84" y="32" text-anchor="middle" class="lbl">3. Systems &amp; Daemons</text>
+    <text x="84" y="50" text-anchor="middle" class="sub" fill="#A78BFA">FastAPI · mDNS · DHCPv4</text>
+    <text x="84" y="65" text-anchor="middle" class="sub">USB HID · Modbus RTU</text>
+  </g>
+
+  <!-- Node 4: Bare-Linux & RTOS -->
+  <g transform="translate(628, 20)">
+    <rect class="box" width="168" height="76" rx="10" stroke="#34D399"/>
+    <text x="84" y="32" text-anchor="middle" class="lbl">4. Bare-Linux &amp; RTOS</text>
+    <text x="84" y="50" text-anchor="middle" class="sub" fill="#34D399">Linux fb0/evdev · C/C++</text>
+    <text x="84" y="65" text-anchor="middle" class="sub">Zephyr RTOS · FreeRTOS</text>
+  </g>
+
+  <!-- Node 5: Silicon & PCBs -->
+  <g transform="translate(822, 20)">
+    <rect class="box" width="156" height="76" rx="10" stroke="#FBBF24"/>
+    <text x="78" y="32" text-anchor="middle" class="lbl">5. Silicon &amp; PCB</text>
+    <text x="78" y="50" text-anchor="middle" class="sub" fill="#FBBF24">STM32 · nRF52 · ESP32</text>
+    <text x="78" y="65" text-anchor="middle" class="sub">KiCad 10 · 15A PWM</text>
+  </g>
+</svg>
